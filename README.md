@@ -27,6 +27,24 @@ Build a Retrieval-Augmented Generation (RAG) system that answers employee questi
 - The system handles out-of-corpus questions gracefully (does not hallucinate)
 - The system cites the source documents it used
 
+## On ambiguity (read this)
+
+This brief is **intentionally underspecified in places**, and the environment we hand you has friction baked in. Real client engagements arrive with gaps in the requirements, contradictions between sources, undocumented constraints, and small roadblocks nobody warned you about. Part of what we're evaluating is how you handle that.
+
+Specifically, some of what's left to you on purpose:
+
+- **Choices that have no single right answer** — chunking strategy, retrieval approach, what counts as the "quality bar" for your eval, how you handle the two-source corpus when sources disagree, which deploy patterns you adopt (managed identity vs. simpler alternatives, etc.). We've deliberately not prescribed these. Pick what you can defend in the walkthrough.
+- **Friction in the corpus itself** — internal inconsistencies between the two source handbooks, layout-stripped PDFs, broken cross-references inside Made Tech files. This is realistic noise, not a bug.
+- **Constraints you'll only discover at runtime** — permission scopes, deploy-path quirks, API quotas, library behavior. Some of what looks like our setup mistake is actually the kind of thing you'd hit at a real client.
+
+What we want to see:
+
+- You **identify the gaps early** rather than discovering them at hour 40.
+- You **make defensible calls from incomplete information** and write them down in `DECISIONS.md` so we can interrogate them later.
+- You **pivot when you hit a roadblock** — find a working path rather than wait for someone to clear it for you. The brief explicitly says don't ask us to disambiguate once you've started; that's not laziness on our side, it's the test.
+- You **ship through ambiguity**. Senior engineers don't get paid to be paralysed by unclear specs.
+
+If you're tempted to ask "should I do X or Y?" — the answer is "pick one, justify it in `DECISIONS.md`, and move." If you're tempted to ask "can you grant me permission Z?" — the answer is "show us the path you took without it." Document the friction, route around it, and tell us about the trade-offs in the walkthrough.
 
 ## Time Expectations
 
